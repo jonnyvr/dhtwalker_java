@@ -3,7 +3,7 @@ package core;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import core.dht.req.Req;
+import core.dht.msg.req.Req;
 
 public class Req_queue {
 	private Queue s_req_list = new LinkedBlockingQueue();

@@ -1,5 +1,7 @@
 package core.dht.msg.req;
 
+import core.dht.msg.Msg_base;
+
 /**
  * 
  *ping
@@ -95,7 +97,7 @@ B±àÂë=d1:rd2:id20:mnopqrstuvwxyz123456e1:t2:aa1:y1:re
  *
  */
 
-public abstract class Req {
+public abstract class Req extends Msg_base{
 	protected String _from;
 	protected String _t;
 	protected String _y;
@@ -108,6 +110,7 @@ public abstract class Req {
 		this._q = "";
 		this._a ="";
 	}
+	
 	//ping
 //	public void action_ping() {
 ////		String tmp_str = "{"t":"aa", "y":"q","q":"ping", "a":{"id":"abcdefghij0123456789"}}";

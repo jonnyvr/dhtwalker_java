@@ -1,6 +1,8 @@
 package core.dht.msg.resp;
 
-public abstract class Resp {
+import core.dht.msg.Msg_base;
+
+public abstract class Resp extends Msg_base{
 	protected String _from;
 	protected String _t;
 	protected String _y;

@@ -1,11 +1,9 @@
 package core;
 
-import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.InetAddress;
 import java.util.TimerTask;
 
-import core.dht.req.Req;
+import core.dht.msg.req.Req;
 
 public class Timer_check_reqQueue extends TimerTask{
 	private DatagramSocket s_server;

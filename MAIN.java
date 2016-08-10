@@ -10,7 +10,9 @@ public class MAIN {
 		// TODO Auto-generated method stub
 		System.out.println("in main");
 		
-		new Walker().begin();
+//		new Walker().begin();
+		
+		
 	}
 
 }
