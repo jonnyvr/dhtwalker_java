@@ -1,7 +1,8 @@
 package core;
 
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.util.Timer;
 
 public class Walker_listener extends Thread{
 	private Config s_config;
@@ -12,19 +13,25 @@ public class Walker_listener extends Thread{
 	
 	public void run() {
 		try {
-			ServerSocket tmp_server = new ServerSocket(this.s_config.s_bind_port);
+			DatagramSocket tmp_server = new DatagramSocket(this.s_config.s_bind_port);
+			  
+			new Timer().scheduleAtFixedRate(new Timer_check_reqQueue(tmp_server), 10000, 100);
 			
 			while(true) {
-				Socket tmp_sok = tmp_server.accept();
-				Walker_worker tmp_worker = new Walker_worker(tmp_sok);
+				System.out.println("begin received");
+				
+				DatagramPacket tmp_pack_recv = new DatagramPacket(new byte[this.s_config.s_pack_size_recv], this.s_config.s_pack_size_recv);				
+				tmp_server.receive(tmp_pack_recv);
+				
+				System.out.println("received"+tmp_pack_recv.getData().toString());
+				Walker_task_recv tmp_worker = new Walker_task_recv(tmp_pack_recv, tmp_server);
 				
 				Walker.s_walker_pool.addRecvAction(tmp_worker);				
-				
 			}
 			
 			
 		}catch(Exception e) {
-			
+			System.out.println(e.getMessage());
 		}
 	}
 	

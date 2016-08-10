@@ -2,8 +2,8 @@ package core;
 
 
 public class Walker {
-	public static WalkerPool s_walker_pool;
-	
+	public static Walker_task_pool s_walker_pool;
+	public static Req_queue s_req_queue = new Req_queue();
 	
 	
 	public Config s_config = null;

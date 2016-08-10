@@ -1,4 +1,4 @@
-package core.dht.resp;
+package core.dht.msg.resp;
 
 public abstract class Resp {
 	protected String _from;

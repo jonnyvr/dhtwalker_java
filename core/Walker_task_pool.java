@@ -4,7 +4,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class WalkerPool {
+public class Walker_task_pool {
 	protected static ExecutorService s_pool_recv = Executors.newFixedThreadPool(Config.s_count_workers);
 	protected static ExecutorService s_pool_send = Executors.newFixedThreadPool(Config.s_count_sender);
 	

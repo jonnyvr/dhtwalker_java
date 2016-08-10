@@ -1,4 +1,4 @@
-package core.dht.req;
+package core.dht.msg.req;
 
 public class Req_ping extends Req {
 	private String _nodeid_target;
