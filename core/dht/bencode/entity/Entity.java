@@ -61,8 +61,7 @@ public abstract class Entity {
 					
 				}
 			}	
-		}	
-		
+		}
 		
 		return tmp_str;
 	}
