@@ -1,21 +1,13 @@
-import core.Walker;
+package core.dht.bencode;
+
 import core.dht.bencode.entity.Entity;
 import core.dht.bencode.entity.EntityDictionary;
 import core.dht.bencode.entity.EntityInt;
 import core.dht.bencode.entity.EntityList;
 import core.dht.bencode.entity.EntityString;
 
-
-public class MAIN {
-
-	/**
-	 * @param args
-	 */
+public class Test {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("in main");
-		
-//		new Walker().begin();
 		
 		try {
 			EntityString tmp_obj = new EntityString("dddddd");
@@ -38,5 +30,4 @@ public class MAIN {
 		
 		
 	}
-
 }
